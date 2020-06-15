@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.slider-container {
+  position: relative;
+  padding: 0px;
+  user-select: none
+}
+
+.slider-box {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.slider-img {
+  border-radius: 50%;
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  border: 15px solid rgba(114, 176, 29, 1);
+}
+
+.slider-ttl {
+  color: rgba(53, 134, 0, 1);
+  text-align: center;
+  font-size: 30px;
+  line-height: 32px;
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: 20px;
+  max-width: 380px;
+}
+
+.slider-dsc {
+  text-indent: 30px;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 20px;
+  max-width: 380px;
+  margin-bottom: 28px;
+}
+
+.slider-btn {
+  cursor: pointer;
+  height: 35px;
+  font-size: 14px;
+  line-height: 35px;
+  text-align: center;
+  width: 142px;
+  background-color: rgba(114, 176, 29, 1);
+  border-radius: 30px;
+  color: white !important;
+  transition: 0.6s ease;
+}
+
+.slider-btn:hover {
+  background-color: rgba(53, 134, 0, 1);
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  /*  border-radius: 0 3px 3px 0;*/
+}
+
+.prev {
+  left: -20px;
+}
+
+.next {
+  right: -20px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  /*  background-color: rgba(0, 0, 0, 0.8);*/
+  color: rgba(114, 176, 29, 1) !important;
+  transform: scale(1.5);
+}
+
+.slider-txt {
+  color: f2f2f2 !important;
+  font-size: 16px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 3px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-bottom: 50px;
+}
+
+.act,
+.dot:hover {
+  background-color: #717171;
+}
+
+.ffade {
+  -webkit-animation-name: ffade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: ffade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes ffade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@media (max-width:991px) {
+  .slider-img {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-row {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+  /*
+  .slider-img {
+    width: 320px;
+    height: 320px;
+  }
+*/
+
+  .dot {
+    display: none;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+}
